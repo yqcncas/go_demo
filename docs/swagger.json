@@ -1,0 +1,295 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/email": {
+            "post": {
+                "description": "描述",
+                "tags": [
+                    "用户"
+                ],
+                "summary": "接口概述",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "邮箱",
+                        "name": "email",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, \"msg\":\"\", data: \"\"}\" // 200成功 返回的 json {\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "description": "描述",
+                "tags": [
+                    "用户"
+                ],
+                "summary": "接口概述",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户名",
+                        "name": "username",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "密码",
+                        "name": "passwrod",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, \"msg\":\"\", data: \"\"}\" // 200成功 返回的 json {\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/problem": {
+            "get": {
+                "description": "描述",
+                "tags": [
+                    "公共方法"
+                ],
+                "summary": "问题列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "分页页数",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "分页个数",
+                        "name": "size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "关键字",
+                        "name": "keyword",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "category_identity",
+                        "name": "category_identity",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, data: \"\", total: \"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/problem-detail": {
+            "get": {
+                "description": "描述",
+                "tags": [
+                    "公共方法"
+                ],
+                "summary": "问题详情",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "详情",
+                        "name": "identity",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, data: \"\", total: \"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/rank-list": {
+            "get": {
+                "description": "描述",
+                "tags": [
+                    "用户"
+                ],
+                "summary": "接口概述",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "分页",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "分页",
+                        "name": "size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, \"msg\":\"\", data: \"\"}\" // 200成功 返回的 json {\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "description": "描述",
+                "tags": [
+                    "用户"
+                ],
+                "summary": "接口概述",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "邮箱",
+                        "name": "mail",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "邮箱",
+                        "name": "code",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "邮箱",
+                        "name": "name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "邮箱",
+                        "name": "passwrod",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "邮箱",
+                        "name": "phone",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, \"msg\":\"\", data: \"\"}\" // 200成功 返回的 json {\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/submit-list": {
+            "get": {
+                "description": "描述",
+                "tags": [
+                    "标题组名"
+                ],
+                "summary": "获取提交列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "请输入分页",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "请输入分页个数",
+                        "name": "size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "问题唯一值",
+                        "name": "problem_identity",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "用户唯一值",
+                        "name": "user_identity",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "状态",
+                        "name": "status",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, \"msg\":\"\", data: \"\"}\" // 200成功 返回的 json {\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user-detail": {
+            "get": {
+                "description": "描述",
+                "tags": [
+                    "用户"
+                ],
+                "summary": "获取用户详情",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "请输入用户id",
+                        "name": "identity",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, data: \"\"}\" // 200成功 返回的 json {\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

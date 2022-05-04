@@ -1,0 +1,193 @@
+info:
+  contact: {}
+paths:
+  /email:
+    post:
+      description: 描述
+      parameters:
+      - description: 邮箱
+        in: formData
+        name: email
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, "msg":"", data: ""}" // 200成功 返回的 json {""}'
+          schema:
+            type: string
+      summary: 接口概述
+      tags:
+      - 用户
+  /login:
+    post:
+      description: 描述
+      parameters:
+      - description: 用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 密码
+        in: formData
+        name: passwrod
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, "msg":"", data: ""}" // 200成功 返回的 json {""}'
+          schema:
+            type: string
+      summary: 接口概述
+      tags:
+      - 用户
+  /problem:
+    get:
+      description: 描述
+      parameters:
+      - description: 分页页数
+        in: query
+        name: page
+        type: integer
+      - description: 分页个数
+        in: query
+        name: size
+        type: integer
+      - description: 关键字
+        in: query
+        name: keyword
+        type: string
+      - description: category_identity
+        in: query
+        name: category_identity
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, data: "", total: ""}'
+          schema:
+            type: string
+      summary: 问题列表
+      tags:
+      - 公共方法
+  /problem-detail:
+    get:
+      description: 描述
+      parameters:
+      - description: 详情
+        in: query
+        name: identity
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, data: "", total: ""}'
+          schema:
+            type: string
+      summary: 问题详情
+      tags:
+      - 公共方法
+  /rank-list:
+    get:
+      description: 描述
+      parameters:
+      - description: 分页
+        in: query
+        name: page
+        type: integer
+      - description: 分页
+        in: query
+        name: size
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "msg":"", data: ""}" // 200成功 返回的 json {""}'
+          schema:
+            type: string
+      summary: 接口概述
+      tags:
+      - 用户
+  /register:
+    post:
+      description: 描述
+      parameters:
+      - description: 邮箱
+        in: formData
+        name: mail
+        required: true
+        type: string
+      - description: 邮箱
+        in: formData
+        name: code
+        required: true
+        type: string
+      - description: 邮箱
+        in: formData
+        name: name
+        required: true
+        type: string
+      - description: 邮箱
+        in: formData
+        name: passwrod
+        required: true
+        type: string
+      - description: 邮箱
+        in: formData
+        name: phone
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, "msg":"", data: ""}" // 200成功 返回的 json {""}'
+          schema:
+            type: string
+      summary: 接口概述
+      tags:
+      - 用户
+  /submit-list:
+    get:
+      description: 描述
+      parameters:
+      - description: 请输入分页
+        in: query
+        name: page
+        type: integer
+      - description: 请输入分页个数
+        in: query
+        name: size
+        type: integer
+      - description: 问题唯一值
+        in: query
+        name: problem_identity
+        type: string
+      - description: 用户唯一值
+        in: query
+        name: user_identity
+        type: string
+      - description: 状态
+        in: query
+        name: status
+        type: integer
+      responses:
+        "200":
+          description: '{"code": 200, "msg":"", data: ""}" // 200成功 返回的 json {""}'
+          schema:
+            type: string
+      summary: 获取提交列表
+      tags:
+      - 标题组名
+  /user-detail:
+    get:
+      description: 描述
+      parameters:
+      - description: 请输入用户id
+        in: query
+        name: identity
+        type: string
+      responses:
+        "200":
+          description: '{"code": 200, data: ""}" // 200成功 返回的 json {""}'
+          schema:
+            type: string
+      summary: 获取用户详情
+      tags:
+      - 用户
+swagger: "2.0"
